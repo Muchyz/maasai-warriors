@@ -161,7 +161,7 @@ const WHY = [
   { icon: Shield, title: "Fully Licensed", desc: "Registered tour operator under Kenya Tourism Board. Fully insured for your peace of mind." },
   { icon: Award, title: "Maasai Guides", desc: "Our guides are born Maasai warriors who have tracked this land for generations — no one knows it better." },
   { icon: Globe, title: "International Clients", desc: "We've hosted guests from 40+ countries. Multilingual support in English, Swahili, and basic French." },
-  { icon: ThumbsUp, title: "Pay After Delivery", desc: "You only pay when the website — or safari — is done and you're fully satisfied. Zero risk." },
+  { icon: ThumbsUp, title: "Flexible Payment", desc: "We accept M-Pesa, cash, and bank transfer. Pay a deposit to confirm your booking and the rest on the day of your safari." },
   { icon: Clock, title: "24/7 Support", desc: "We're always reachable before, during, and after your safari. WhatsApp us any time." },
 ];
 
