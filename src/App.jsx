@@ -38,7 +38,7 @@ const NAV = [
 const SERVICES = [
   { icon: Binoculars, title: "Game Drives", desc: "Witness the Big Five in their natural habitat with expert Maasai guides who read the bush like a map.", img: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=80" },
   { icon: Users, title: "Cultural Tours", desc: "Step into authentic Maasai village life — dances, traditions, beadwork, and stories passed down generations.", img: "/cultural.jpg" },
-  { icon: Tent, title: "Overnight Safari", desc: "Sleep under a sky full of stars. Full camp setup, gourmet bush meals, and guided night walks included.", img: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=700&q=80" },
+  { icon: Tent, title: "Overnight Safari", desc: "Sleep under a sky full of stars. Full camp setup, gourmet bush meals, and guided night walks included.", img: "/overnight.jpg" },
   { icon: Droplets, title: "Lake Naivasha", desc: "Boat rides, hippo spotting, and flamingo watching at one of Kenya's most scenic Rift Valley lakes.", img: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=700&q=80" },
   { icon: Camera, title: "Photo Safaris", desc: "Dedicated photography tours timed with golden-hour light for wildlife shots worth framing.", img: "https://images.unsplash.com/photo-1551009175-8a68da93d5f9?w=700&q=80" },
   { icon: Heart, title: "Honeymoon Safaris", desc: "Private romantic safari experiences with sundowners, candlelit bush dinners, and luxury tent stays.", img: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=700&q=80" },
