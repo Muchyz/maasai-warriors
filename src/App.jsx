@@ -466,22 +466,37 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
   border: 2px dashed rgba(201,151,58,0.3); pointer-events: none;
 }
 .hero-stats-bar {
-  background: linear-gradient(135deg, #c9973a 0%, #7f5a1f 100%);
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.06);
 }
 .hero-stats-inner {
-  max-width: 1200px; margin: 0 auto; padding: 0 4%;
-  display: flex; justify-content: space-around; align-items: stretch;
+  max-width: 1200px; margin: 0 auto; padding: 0 5%;
+  display: grid; grid-template-columns: repeat(3,1fr);
 }
 .hstat {
-  flex: 1; display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 0.15rem;
-  padding: 1rem 0.5rem; text-align: center;
-  border-right: 1px solid rgba(255,255,255,0.2);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 0.3rem;
+  padding: 1.4rem 1rem; text-align: center;
+  border-right: 1px solid rgba(0,0,0,0.07);
+  position: relative;
 }
 .hstat:last-child { border-right: none; }
-.hstat-icon { color: rgba(255,255,255,0.45); margin-bottom: 0.2rem; }
-.hstat-num { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #fff; font-weight: 700; line-height: 1; white-space: nowrap; }
-.hstat-label { font-size: 0.52rem; color: rgba(255,255,255,0.65); letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; line-height: 1.5; white-space: nowrap; }
+.hstat-icon-box {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 0.3rem;
+}
+.hstat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem; font-weight: 700; line-height: 1;
+  color: #0f1a10;
+}
+.hstat-label {
+  font-size: 0.58rem; letter-spacing: 1.5px;
+  text-transform: uppercase; font-weight: 600;
+  color: #6b7280; line-height: 1.4;
+}
 .hero-ticker-wrap {
   background: #0f1a10; padding: 0.8rem 5%; overflow: hidden;
 }
@@ -1045,12 +1060,14 @@ export default function App() {
         <div className="hero-stats-bar">
           <div className="hero-stats-inner">
             {[
-              { icon: Compass, num: "500+", label: "Safaris Completed" },
-              { icon: Heart,   num: "1,800+", label: "Happy Travellers" },
-              { icon: Award,   num: "10+", label: "Years Experience" },
+              { icon: Compass, num: "500+", label: "Safaris Completed", color: "#c9973a", bg: "rgba(201,151,58,0.1)" },
+              { icon: Heart,   num: "1,800+", label: "Happy Travellers", color: "#2d5a35", bg: "rgba(45,90,53,0.1)" },
+              { icon: Award,   num: "10+", label: "Years Experience", color: "#c9973a", bg: "rgba(201,151,58,0.1)" },
             ].map((s, i) => (
               <div key={i} className="hstat">
-                <s.icon size={14} className="hstat-icon" />
+                <div className="hstat-icon-box" style={{ background: s.bg }}>
+                  <s.icon size={16} style={{ color: s.color }} />
+                </div>
                 <div className="hstat-num">{s.num}</div>
                 <div className="hstat-label">{s.label}</div>
               </div>
