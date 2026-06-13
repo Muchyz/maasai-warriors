@@ -88,7 +88,7 @@ const PACKAGES = [
 ];
 
 const DESTINATIONS = [
-  { name: "Hell's Gate NP", tag: "Gilgil Doorstep", desc: "Dramatic gorges, geothermal activity, and zebras you can cycle past. 30 minutes from our base.", img: "https://images.unsplash.com/photo-1567522804-d77e621a1a01?w=700&q=80", hours: "45 min drive" },
+  { name: "Hell's Gate NP", tag: "Gilgil Doorstep", desc: "Dramatic gorges, geothermal activity, and zebras you can cycle past. 30 minutes from our base.", img: "/hellsgate.jpg", hours: "45 min drive" },
   { name: "Lake Naivasha", tag: "Rift Valley", desc: "Papyrus-fringed freshwater lake teeming with hippos, fish eagles, and hundreds of bird species.", img: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=700&q=80", hours: "40 min drive" },
   { name: "Maasai Mara", tag: "Iconic Reserve", desc: "The world's greatest wildlife spectacle. The Great Migration, lions, cheetahs, and endless savanna.", img: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=80", hours: "4 hr drive" },
   { name: "Lake Nakuru", tag: "Pink Flamingos", desc: "A soda lake painted pink by a million flamingos, plus rhinos and leopards in the surrounding park.", img: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=700&q=80", hours: "1 hr drive" },
