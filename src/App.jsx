@@ -147,7 +147,7 @@ const SEASONS = [
 ];
 
 const TEAM = [
-  { name: "Joshua Lekoolal", role: "Lead Safari Guide & Founder", img: "/joshua.png", bio: "Born and raised in the Maasai Mara, Joshua has 15+ years guiding Big Five safaris and speaks English, Swahili, and Maa.", tags: ["KPSGA Licensed", "15+ Years", "EN · SW · Maa"] },
+  { name: "Joseph Ole Kodonyo", role: "Founder & Lead Naturalist Guide", img: "/joshua.png", bio: "Born and raised in the Maasai Mara, Joshua has 15+ years guiding Big Five safaris and speaks English, Swahili, and Maa.", tags: ["KPSGA Licensed", "15+ Years", "EN · SW · Maa"] },
 ];
 
 const WHY = [
@@ -1091,7 +1091,7 @@ export default function App() {
               listen to the bush, and treat every guest like family — because that's how we were raised. Karibu sana. Welcome.
             </p>
             <div className="director-sig">
-              <div className="director-sig-name">Joshua Lekoolal</div>
+              <div className="director-sig-name">Joseph Ole Kodonyo</div>
               <div className="director-sig-role">Founder & Director, Maasai Warriors Tours & Safaris</div>
             </div>
           </div>
