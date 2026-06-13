@@ -41,7 +41,7 @@ const SERVICES = [
   { icon: Tent, title: "Overnight Safari", desc: "Sleep under a sky full of stars. Full camp setup, gourmet bush meals, and guided night walks included.", img: "/overnight.jpg" },
   { icon: Droplets, title: "Lake Naivasha", desc: "Boat rides, hippo spotting, and flamingo watching at one of Kenya's most scenic Rift Valley lakes.", img: "/naivasha-boat.jpg" },
   { icon: Camera, title: "Photo Safaris", desc: "Dedicated photography tours timed with golden-hour light for wildlife shots worth framing.", img: "/photosafari.jpg" },
-  { icon: Heart, title: "Honeymoon Safaris", desc: "Private romantic safari experiences with sundowners, candlelit bush dinners, and luxury tent stays.", img: "/overnight.jpg" },
+  { icon: Heart, title: "Honeymoon Safaris", desc: "Private romantic safari experiences with sundowners, candlelit bush dinners, and luxury tent stays.", img: "/honeymoon.jpg" },
 ];
 
 const PACKAGES = [
