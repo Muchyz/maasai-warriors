@@ -305,163 +305,199 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
 
 /* ── HERO ── */
 .hero {
-  position: relative; min-height: 100vh; min-height: 100dvh;
-  display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+  position: relative; min-height: 100svh;
+  display: flex; flex-direction: column; overflow: hidden;
+  background: linear-gradient(160deg, #0d1f0f 0%, #162b18 45%, #0a1a0b 100%);
 }
-.hero-left {
-  position: relative; display: flex; flex-direction: column;
-  justify-content: center; padding: 140px 5% 80px 7%;
-  background: var(--g); z-index: 2;
+.hero-blob-1 {
+  position: absolute; top: -40px; left: -60px;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: linear-gradient(135deg, rgba(201,151,58,0.18), rgba(42,90,50,0.12));
+  filter: blur(60px); pointer-events: none;
 }
-.hero-left::after {
-  content: ''; position: absolute; top: 0; right: -60px; bottom: 0;
-  width: 120px; background: var(--g);
-  clip-path: polygon(0 0, 0% 100%, 100% 100%); z-index: 3;
+.hero-blob-2 {
+  position: absolute; bottom: 80px; right: -60px;
+  width: 280px; height: 280px; border-radius: 50%;
+  background: linear-gradient(135deg, rgba(201,151,58,0.12), rgba(74,222,128,0.08));
+  filter: blur(50px); pointer-events: none;
 }
-.hero-right { position: relative; overflow: hidden; }
-.hero-right-img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center;
-  animation: heroZoom 22s ease-in-out infinite alternate;
+.hero-dots {
+  position: absolute; inset: 0; opacity: 0.06; pointer-events: none;
+  background-image: radial-gradient(circle, #c9973a 1px, transparent 1px);
+  background-size: 32px 32px;
 }
-.hero-right::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to right, var(--g) 0%, transparent 30%),
-              linear-gradient(to top, rgba(10,22,11,0.6) 0%, transparent 50%);
+.hero-main {
+  flex: 1; display: flex; align-items: center;
 }
-@keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.07); } }
-.hero-avail {
-  display: inline-flex; align-items: center; gap: 0.55rem;
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 30px; padding: 0.45rem 1rem 0.45rem 0.55rem;
-  margin-bottom: 2rem; width: fit-content;
+.hero-inner {
+  width: 100%; max-width: 1200px; margin: 0 auto;
+  padding: 100px 5% 40px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: center;
 }
-.hero-avail-dot {
-  width: 8px; height: 8px; background: #4ade80; border-radius: 50%;
+.hero-left { position: relative; z-index: 2; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(201,151,58,0.12);
+  border: 1px solid rgba(201,151,58,0.35);
+  color: var(--gold); font-size: 0.72rem;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  padding: 0.45rem 1rem; border-radius: 30px;
+  margin-bottom: 1.6rem; font-weight: 600;
+  animation: heroFadeUp 0.65s ease both;
+}
+.hero-badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #4ade80;
   box-shadow: 0 0 0 3px rgba(74,222,128,0.2);
-  animation: pulse-green 2s infinite; flex-shrink: 0;
+  animation: pulse-green 2s infinite;
 }
 @keyframes pulse-green {
   0%,100% { box-shadow: 0 0 0 3px rgba(74,222,128,0.2); }
   50%      { box-shadow: 0 0 0 6px rgba(74,222,128,0.05); }
 }
-.hero-avail-text { font-size: 0.72rem; color: rgba(255,255,255,0.65); }
-.hero-avail-text strong { color: rgba(255,255,255,0.9); font-weight: 600; }
-.hero-location {
-  display: flex; align-items: center; gap: 0.4rem;
-  font-size: 0.68rem; letter-spacing: 3.5px; text-transform: uppercase;
-  color: var(--gold); font-weight: 600; margin-bottom: 1.2rem;
-}
 .hero h1 {
-  font-size: clamp(2.6rem, 4.5vw, 4.8rem); color: var(--white);
-  font-weight: 700; line-height: 1.06; max-width: 560px;
-  animation: heroFadeUp 0.8s ease-out 0.1s both;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  color: var(--white); font-weight: 700;
+  line-height: 1.08; max-width: 560px;
+  animation: heroFadeUp 0.65s ease 0.1s both;
 }
-.hero h1 em { font-style: normal; color: var(--gold); display: block; }
-@keyframes heroFadeUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
+.hero h1 .hero-h1-gradient {
+  background: linear-gradient(135deg, var(--gold), var(--golds));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; display: block;
+}
+.hero-accent-line {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin: 1rem 0;
+  animation: heroFadeUp 0.65s ease 0.15s both;
+}
+.hero-accent-line .line {
+  height: 2px; width: 36px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--golds));
+}
+.hero-accent-text {
+  font-size: 0.65rem; font-weight: 600;
+  color: rgba(255,255,255,0.4); letter-spacing: 3px; text-transform: uppercase;
 }
 .hero-sub {
-  color: rgba(255,255,255,0.6); font-size: 0.97rem; max-width: 440px;
-  margin: 1.4rem 0 2.4rem; line-height: 1.85; font-weight: 300;
-  animation: heroFadeUp 0.8s ease-out 0.25s both;
+  color: rgba(255,255,255,0.65); font-size: 0.95rem;
+  max-width: 460px; line-height: 1.85; font-weight: 300;
+  margin-bottom: 1.8rem;
+  animation: heroFadeUp 0.65s ease 0.2s both;
 }
 .hero-btns {
-  display: flex; gap: 0.85rem; flex-wrap: wrap;
-  animation: heroFadeUp 0.8s ease-out 0.4s both;
+  display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.8rem;
+  animation: heroFadeUp 0.65s ease 0.3s both;
 }
 .btn-gold {
-  background: var(--gold); color: var(--g); border: none;
-  padding: 0.95rem 2rem; border-radius: 3px; font-weight: 700;
-  font-size: 0.84rem; letter-spacing: 1.2px; text-transform: uppercase;
-  transition: background 0.2s, transform 0.15s;
-  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, var(--gold), #b8832e);
+  color: var(--g); border: none;
+  padding: 0.95rem 2rem; border-radius: 10px; font-weight: 700;
+  font-size: 0.84rem; letter-spacing: 0.8px; text-transform: uppercase;
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 6px 20px rgba(201,151,58,0.35);
 }
-.btn-gold:hover { background: var(--golds); transform: translateY(-2px); }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,151,58,0.45); }
 .btn-wa {
-  background: #25D366; color: var(--white); border: none;
-  padding: 0.95rem 2rem; border-radius: 3px; font-weight: 700;
-  font-size: 0.84rem; letter-spacing: 1.2px; text-transform: uppercase;
-  transition: background 0.2s, transform 0.15s;
-  display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer;
+  background: rgba(255,255,255,0.07);
+  color: var(--white); border: 1.5px solid rgba(255,255,255,0.2);
+  padding: 0.95rem 2rem; border-radius: 10px; font-weight: 600;
+  font-size: 0.84rem; letter-spacing: 0.8px; text-transform: uppercase;
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+  cursor: pointer;
 }
-.btn-wa:hover { background: #1fb855; transform: translateY(-2px); }
+.btn-wa:hover { border-color: #25D366; color: #25D366; transform: translateY(-2px); }
 .btn-ghost {
   background: transparent; color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.3);
-  padding: 0.95rem 2rem; border-radius: 3px; font-weight: 500;
-  font-size: 0.84rem; letter-spacing: 1.2px; text-transform: uppercase;
-  transition: border-color 0.2s, color 0.2s;
-  display: inline-flex; align-items: center; gap: 0.5rem;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  padding: 0.95rem 2rem; border-radius: 10px; font-weight: 500;
+  font-size: 0.84rem; letter-spacing: 0.8px; text-transform: uppercase;
+  transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
 }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-.hero-ticker-wrap {
-  margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 1.4rem; overflow: hidden;
-  animation: heroFadeUp 0.8s ease-out 0.55s both;
+.hero-glass-cards {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 0.6rem; animation: heroFadeUp 0.65s ease 0.4s both;
 }
-.hero-ticker-label {
-  font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
-  color: rgba(255,255,255,0.35); margin-bottom: 0.7rem;
+.hero-glass-card {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  padding: 1rem 0.5rem; border-radius: 14px; border: 1px solid;
+  backdrop-filter: blur(16px); text-align: center;
 }
-.hero-ticker {
-  display: flex; gap: 0; animation: ticker 18s linear infinite; width: max-content;
+.hero-glass-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
 }
+.hero-glass-val { font-weight: 700; font-size: 0.82rem; color: var(--white); line-height: 1.2; }
+.hero-glass-label { font-size: 0.62rem; color: rgba(255,255,255,0.45); text-align: center; }
+.hero-right { position: relative; display: flex; flex-direction: column; gap: 0.75rem; }
+.hero-img-main {
+  width: 100%; border-radius: 20px; overflow: hidden;
+  aspect-ratio: 4/3; position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.hero-img-main img { width: 100%; height: 100%; object-fit: cover; animation: heroZoom 22s ease-in-out infinite alternate; }
+.hero-img-main::after {
+  content: ''; position: absolute; inset: 0; border-radius: 20px;
+  background: linear-gradient(to top right, rgba(201,151,58,0.12), transparent);
+}
+@keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.06); } }
+.hero-float-card {
+  position: absolute; z-index: 10;
+  background: rgba(22,43,24,0.85); backdrop-filter: blur(16px);
+  border: 1px solid rgba(201,151,58,0.25); border-radius: 14px;
+  padding: 0.85rem 1.1rem; display: flex; align-items: center; gap: 0.75rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.hero-float-card.fc-tl { top: 16px; left: -16px; animation: heroFadeUp 0.65s ease 0.6s both, float 4s ease-in-out infinite; }
+.hero-float-card.fc-br { bottom: 60px; right: -16px; animation: heroFadeUp 0.65s ease 0.75s both, float 4s ease-in-out 1s infinite; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.fc-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.fc-label { font-size: 0.62rem; color: rgba(255,255,255,0.45); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.fc-val { font-size: 0.88rem; font-weight: 700; color: var(--white); margin-top: 1px; }
+.hero-circle-deco {
+  position: absolute; bottom: -20px; right: -20px;
+  width: 120px; height: 120px; border-radius: 50%;
+  border: 2px dashed rgba(201,151,58,0.25);
+}
+.hero-stats-bar {
+  background: linear-gradient(135deg, var(--gm) 0%, var(--gl) 100%);
+  border-top: 2px solid rgba(201,151,58,0.3);
+}
+.hero-stats-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 5%;
+  display: grid; grid-template-columns: repeat(3,1fr);
+}
+.hstat {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.3rem; padding: 1.2rem 1rem; text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.hstat:last-child { border-right: none; }
+.hstat-icon { color: rgba(255,255,255,0.35); margin-bottom: 0.1rem; }
+.hstat-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold); font-weight: 700; line-height: 1; }
+.hstat-label { font-size: 0.62rem; color: rgba(255,255,255,0.5); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+.hero-ticker-wrap { max-width: 1200px; margin: 0 auto; padding: 1rem 5% 0; border-top: 1px solid rgba(255,255,255,0.07); overflow: hidden; }
+.hero-ticker-label { font-size: 0.58rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 0.5rem; }
+.hero-ticker { display: flex; gap: 0; animation: ticker 18s linear infinite; width: max-content; }
 .hero-ticker:hover { animation-play-state: paused; }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.ticker-item {
-  display: flex; align-items: center; gap: 0.5rem;
-  padding: 0 2rem; font-size: 0.78rem; color: rgba(255,255,255,0.55);
-  white-space: nowrap; font-weight: 500;
-}
+.ticker-item { display: flex; align-items: center; gap: 0.5rem; padding: 0 2rem; font-size: 0.75rem; color: rgba(255,255,255,0.45); white-space: nowrap; font-weight: 500; }
 .ticker-item svg { color: var(--gold); flex-shrink: 0; }
-.ticker-dot { width: 3px; height: 3px; background: rgba(201,151,58,0.4); border-radius: 50%; }
-.hero-photo-badge {
-  position: absolute; z-index: 10;
-  background: rgba(22,43,24,0.85); backdrop-filter: blur(12px);
-  border: 1px solid rgba(201,151,58,0.25); border-radius: 10px;
-  padding: 1rem 1.3rem; animation: heroFadeUp 0.8s ease-out 0.7s both;
-}
-.hero-photo-badge.badge-tl { top: 110px; left: 20px; display: none; }
-.hero-photo-badge.badge-br {
-  bottom: 36px; right: 24px; display: flex; align-items: center; gap: 0.8rem;
-}
-.badge-num {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.9rem;
-  color: var(--gold); font-weight: 700; line-height: 1;
-}
-.badge-label {
-  font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase;
-  color: rgba(255,255,255,0.55); margin-top: 0.2rem;
-}
-.badge-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.12); }
-.badge-br-text { font-size: 0.78rem; color: rgba(255,255,255,0.75); line-height: 1.5; max-width: 120px; }
-.badge-br-text strong { color: var(--white); display: block; font-size: 0.85rem; }
-@media (max-width: 768px) {
-  .hero { grid-template-columns: 1fr !important; min-height: auto; width: 100%; }
-  .hero-right { height: 40vh; order: -1; width: 100%; }
-  .hero-right::after {
-    background: linear-gradient(to top, var(--g) 0%, rgba(10,22,11,0.3) 60%, transparent 100%);
-  }
-  .hero-left { padding: 2rem 6% 2.5rem; width: 100%; overflow: hidden; }
-  .hero-left::after { display: none; }
-  .hero h1 { font-size: clamp(1.9rem, 7.5vw, 3rem); max-width: 100%; }
-  .hero-sub { margin: 0.9rem 0 1.6rem; font-size: 0.9rem; max-width: 100%; }
-  .hero-avail { max-width: 100%; overflow: hidden; }
-  .hero-avail-text { font-size: 0.68rem; }
-  .hero-location { font-size: 0.62rem; letter-spacing: 2.5px; }
-  .hero-btns { flex-direction: column; width: 100%; }
-  .hero-btns .btn-gold, .hero-btns .btn-wa { width: 100%; justify-content: center; }
-  .hero-photo-badge.badge-tl { top: 12px; left: 12px; padding: 0.6rem 0.9rem; }
-  .hero-photo-badge.badge-br { display: none; }
-  .badge-num { font-size: 1.3rem; }
-  .hero-ticker-wrap { margin-top: 1.8rem; }
-  .ticker-item { padding: 0 1.2rem; font-size: 0.72rem; }
+.ticker-dot { width: 3px; height: 3px; background: rgba(201,151,58,0.35); border-radius: 50%; }
+@keyframes heroFadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; padding: 90px 5% 30px; gap: 2rem; }
+  .hero-right { display: none; }
+  .hero-glass-cards { grid-template-columns: repeat(3,1fr); }
 }
 @media (max-width: 480px) {
-  .hero-right { height: 35vh; }
-  .hero-avail { margin-bottom: 1.2rem; }
-  .hero h1 { font-size: clamp(1.7rem, 7vw, 2.6rem); }
+  .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn-gold, .hero-btns .btn-wa { width: 100%; justify-content: center; }
+  .hero-glass-card { padding: 0.8rem 0.3rem; }
+  .hero-glass-val { font-size: 0.72rem; }
 }
 
 /* ── SECTIONS ── */
@@ -923,79 +959,122 @@ export default function App() {
 
       {/* ── HERO ── */}
       <section id="home" className="hero">
+        <div className="hero-blob-1" />
+        <div className="hero-blob-2" />
+        <div className="hero-dots" />
 
-        <div className="hero-left">
-          <div className="hero-avail">
-            <span className="hero-avail-dot" />
-            <span className="hero-avail-text">
-              <strong>Available this weekend</strong> · Book in under 2 min
-            </span>
+        <div className="hero-main">
+          <div className="hero-inner">
+
+            {/* LEFT */}
+            <div className="hero-left">
+              <div className="hero-badge">
+                <span className="hero-badge-dot" />
+                Gilgil, Nakuru County, Kenya
+              </div>
+              <h1>
+                Kenya's Most Authentic
+                <span className="hero-h1-gradient">Safari Experience</span>
+              </h1>
+              <div className="hero-accent-line">
+                <div className="line" />
+                <span className="hero-accent-text">Est. in the Rift Valley</span>
+              </div>
+              <p className="hero-sub">
+                Immerse yourself in Kenya's untamed wilderness with real Maasai guides
+                who have tracked this land for generations. Authentic. Safe. Unforgettable.
+              </p>
+              <div className="hero-btns">
+                <button className="btn-gold" onClick={() => go("packages")}>
+                  <Compass size={16} /> View Packages
+                </button>
+                <button className="btn-wa" onClick={() => window.open(wa("Hello Maasai Warriors! I'd like to book a safari 🦁"), "_blank")}>
+                  <FaWhatsapp size={16} /> WhatsApp Us
+                </button>
+              </div>
+              <div className="hero-glass-cards">
+                {[
+                  { icon: Compass, color: "#c9973a", bg: "rgba(201,151,58,0.12)", border: "rgba(201,151,58,0.25)", val: "500+", label: "Safaris Done" },
+                  { icon: Shield, color: "#4ade80", bg: "rgba(74,222,128,0.1)", border: "rgba(74,222,128,0.2)", val: "KTB", label: "Licensed & Insured" },
+                  { icon: Globe, color: "#93c5fd", bg: "rgba(147,197,253,0.1)", border: "rgba(147,197,253,0.2)", val: "40+", label: "Countries" },
+                ].map((c, i) => (
+                  <div key={i} className="hero-glass-card" style={{ background: c.bg, borderColor: c.border }}>
+                    <div className="hero-glass-icon" style={{ background: c.border }}>
+                      <c.icon size={16} style={{ color: c.color }} />
+                    </div>
+                    <div className="hero-glass-val">{c.val}</div>
+                    <div className="hero-glass-label">{c.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT */}
+            <div className="hero-right">
+              <div className="hero-float-card fc-tl">
+                <div className="fc-icon" style={{ background: "rgba(74,222,128,0.15)" }}>
+                  <CheckCircle size={18} style={{ color: "#4ade80" }} />
+                </div>
+                <div>
+                  <div className="fc-label">Availability</div>
+                  <div className="fc-val">Available This Weekend</div>
+                </div>
+              </div>
+              <div className="hero-img-main">
+                <img src="/about.png" alt="Maasai Warriors Safari" />
+              </div>
+              <div className="hero-float-card fc-br">
+                <div className="fc-icon" style={{ background: "rgba(201,151,58,0.15)" }}>
+                  <Star size={18} style={{ color: "var(--gold)" }} />
+                </div>
+                <div>
+                  <div className="fc-label">Avg Rating</div>
+                  <div className="fc-val">★ 5.0 · 1,800+ Guests</div>
+                </div>
+              </div>
+              <div className="hero-circle-deco" />
+            </div>
+
           </div>
-          <div className="hero-location">
-            <MapPin size={13} /> Gilgil, Nakuru County, Kenya
-          </div>
-          <h1>
-            Where Warriors
-            <em>Guide You Home</em>
-          </h1>
-          <p className="hero-sub">
-            Immerse yourself in Kenya’s untamed wilderness with real Maasai guides
-            who have tracked this land for generations. Authentic. Safe. Unforgettable.
-          </p>
-          <div className="hero-btns">
-            <button className="btn-gold" onClick={() => go("packages")}>
-              <Compass size={16} /> View Packages
-            </button>
-            <button className="btn-wa" onClick={() => window.open(wa("Hello Maasai Warriors! I'd like to book a safari 🦁"), "_blank")}>
-              <FaWhatsapp size={16} /> WhatsApp Us
-            </button>
+        </div>
+
+        {/* STATS BAR */}
+        <div className="hero-stats-bar">
+          <div className="hero-stats-inner">
+            {[
+              { icon: Compass, num: "500+", label: "Safaris Completed" },
+              { icon: Heart,   num: "1,800+", label: "Happy Travellers" },
+              { icon: Award,   num: "10+", label: "Years Experience" },
+            ].map((s, i) => (
+              <div key={i} className="hstat">
+                <s.icon size={14} className="hstat-icon" />
+                <div className="hstat-num">{s.num}</div>
+                <div className="hstat-label">{s.label}</div>
+              </div>
+            ))}
           </div>
           <div className="hero-ticker-wrap">
             <div className="hero-ticker-label">Trusted by travellers from 40+ countries</div>
             <div className="hero-ticker">
               {[
                 { icon: Compass, text: "500+ Safaris Completed" },
-                { icon: Heart,   text: "1,800+ Happy Travellers" },
-                { icon: Globe,   text: "40+ Countries" },
-                { icon: Shield,  text: "KTB Licensed & Insured" },
-                { icon: Leaf,    text: "Eco-Certified Operator" },
-                { icon: Award,   text: "10+ Years Experience" },
+                { icon: Heart, text: "1,800+ Happy Travellers" },
+                { icon: Globe, text: "40+ Countries" },
+                { icon: Shield, text: "KTB Licensed & Insured" },
+                { icon: Leaf, text: "Eco-Certified Operator" },
+                { icon: Award, text: "10+ Years Experience" },
                 { icon: Compass, text: "500+ Safaris Completed" },
-                { icon: Heart,   text: "1,800+ Happy Travellers" },
-                { icon: Globe,   text: "40+ Countries" },
-                { icon: Shield,  text: "KTB Licensed & Insured" },
-                { icon: Leaf,    text: "Eco-Certified Operator" },
-                { icon: Award,   text: "10+ Years Experience" },
+                { icon: Heart, text: "1,800+ Happy Travellers" },
+                { icon: Globe, text: "40+ Countries" },
+                { icon: Shield, text: "KTB Licensed & Insured" },
+                { icon: Leaf, text: "Eco-Certified Operator" },
+                { icon: Award, text: "10+ Years Experience" },
               ].map((item, i) => (
                 <span key={i} className="ticker-item">
-                  <item.icon size={13} />
-                  {item.text}
+                  <item.icon size={12} />{item.text}
                   {i % 6 !== 5 && <span className="ticker-dot" />}
                 </span>
               ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="hero-right">
-          <img
-            className="hero-right-img"
-            src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1400&q=90"
-            alt="Safari wildlife Kenya"
-          />
-          <div className="hero-photo-badge badge-tl">
-            <div className="badge-num">10+</div>
-            <div className="badge-label">Years of Excellence</div>
-          </div>
-          <div className="hero-photo-badge badge-br">
-            <div>
-              <div className="badge-num">★ 5.0</div>
-              <div className="badge-label">Avg Rating</div>
-            </div>
-            <div className="badge-divider" />
-            <div className="badge-br-text">
-              <strong>Verified Reviews</strong>
-              From guests in 40+ countries
             </div>
           </div>
         </div>
