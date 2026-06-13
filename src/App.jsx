@@ -97,14 +97,12 @@ const DESTINATIONS = [
 ];
 
 const GALLERY_IMGS = [
-  { src: "/gallery1.jpg", label: "Safari Guests in the Wild" },
+  { src: "/gallery5.jpg", label: "Group Safari at Hell's Gate" },
+  { src: "/gallery1.jpg", label: "Guests on a Game Walk" },
+  { src: "/gallery2.jpg", label: "Trekking the Rift Valley" },
+  { src: "/gallery3.jpg", label: "Maasai Guide & Happy Guests" },
+  { src: "/gallery4.jpg", label: "Meeting Our Maasai Guide" },
   { src: "/about.png", label: "Maasai Warriors Team" },
-  { src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=80", label: "Big Five Drive" },
-  { src: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=700&q=80", label: "Lake Naivasha" },
-  { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=700&q=80", label: "Bush Camp Night" },
-  { src: "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=700&q=80", label: "Cultural Dance" },
-  { src: "https://images.unsplash.com/photo-1567522804-d77e621a1a01?w=700&q=80", label: "Hell's Gate" },
-  { src: "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=700&q=80", label: "Wildlife Close-up" },
 ];
 
 const REVIEWS = [
