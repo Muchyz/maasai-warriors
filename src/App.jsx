@@ -575,20 +575,57 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .dest-info { display: flex; align-items: center; gap: 0.4rem; color: rgba(255,255,255,0.5); font-size: 0.72rem; }
 
 /* ── GALLERY ── */
-.gal-sec { background: var(--g); }
+.gal-sec { background: var(--dark); }
 .gal-sec .sh { color: var(--white); }
 .gal-sec .sd { color: rgba(255,255,255,0.55); }
-.gal-grid { display: grid; grid-template-columns: repeat(4,1fr); grid-auto-rows: 200px; gap: 0.75rem; }
-.gal-item { position: relative; overflow: hidden; border-radius: 5px; cursor: pointer; }
+.gal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 260px 260px;
+  gap: 0.5rem;
+}
+.gal-item { position: relative; overflow: hidden; border-radius: 10px; cursor: pointer; }
 .gal-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-.gal-item:nth-child(5) { grid-column: span 2; }
-.gal-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-.gal-item:hover .gal-img { transform: scale(1.07); }
-.gal-overlay { position: absolute; inset: 0; background: rgba(10,22,11,0); display: flex; align-items: flex-end; padding: 1rem; transition: background 0.3s; }
-.gal-item:hover .gal-overlay { background: rgba(10,22,11,0.55); }
-.gal-label { color: var(--white); font-size: 0.8rem; font-weight: 600; opacity: 0; transform: translateY(8px); transition: opacity 0.3s, transform 0.3s; letter-spacing: 1px; }
-.gal-item:hover .gal-label { opacity: 1; transform: translateY(0); }
+.gal-item:nth-child(2) { grid-column: span 1; grid-row: span 1; }
+.gal-item:nth-child(3) { grid-column: span 1; grid-row: span 1; }
+.gal-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); }
+.gal-item:hover .gal-img { transform: scale(1.08); }
+.gal-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 1.2rem; opacity: 0; transition: opacity 0.35s;
+}
+.gal-item:hover .gal-overlay { opacity: 1; }
+.gal-label {
+  color: var(--white); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  transform: translateY(10px); transition: transform 0.35s;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.gal-item:hover .gal-label { transform: translateY(0); }
+.gal-gold-line {
+  width: 0; height: 2px; background: var(--gold);
+  transition: width 0.4s 0.1s; margin-bottom: 0.5rem;
+}
+.gal-item:hover .gal-gold-line { width: 32px; }
 .gal-cta { text-align: center; margin-top: 2.5rem; }
+@media (max-width: 768px) {
+  .gal-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-rows: 180px;
+  }
+  .gal-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+  .gal-item:nth-child(2), .gal-item:nth-child(3) { grid-column: span 1; }
+  .gal-overlay { opacity: 1; }
+  .gal-gold-line { width: 24px; }
+  .gal-label { transform: translateY(0); }
+}
+@media (max-width: 480px) {
+  .gal-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+  .gal-item:nth-child(1), .gal-item:nth-child(2), .gal-item:nth-child(3) { grid-column: span 1; }
+}
 
 /* ── REVIEWS ── */
 .rev-sec { background: var(--white); }
@@ -1269,7 +1306,8 @@ export default function App() {
             <div className="gal-item" key={i}>
               <img className="gal-img" src={g.src} alt={g.label} />
               <div className="gal-overlay">
-                <span className="gal-label"><Camera size={13} style={{ display: "inline", verticalAlign: "middle", marginRight: "0.3rem" }} />{g.label}</span>
+                <div className="gal-gold-line" />
+                <span className="gal-label"><Camera size={13} />{g.label}</span>
               </div>
             </div>
           ))}
