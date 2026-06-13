@@ -1010,7 +1010,7 @@ export default function App() {
               <div className="abn">10+</div>
               <div className="abl">Years of Excellence</div>
             </div>
-            <img className="about-img-main" src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=900&q=85" alt="Maasai Guide" />
+            <img className="about-img-main" src="/about.png" alt="Maasai Warriors Safari Team" />
             <img className="about-img-inset" src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=400&q=80" alt="Cultural Tour" />
           </div>
           <div className="about-body">
