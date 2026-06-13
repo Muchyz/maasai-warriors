@@ -465,38 +465,6 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
   width: 130px; height: 130px; border-radius: 50%;
   border: 2px dashed rgba(201,151,58,0.3); pointer-events: none;
 }
-.hero-stats-bar {
-  background: #fff;
-  border-top: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.06);
-}
-.hero-stats-inner {
-  max-width: 1200px; margin: 0 auto; padding: 0 5%;
-  display: grid; grid-template-columns: repeat(3,1fr);
-}
-.hstat {
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 0.3rem;
-  padding: 1.4rem 1rem; text-align: center;
-  border-right: 1px solid rgba(0,0,0,0.07);
-  position: relative;
-}
-.hstat:last-child { border-right: none; }
-.hstat-icon-box {
-  width: 36px; height: 36px; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 0.3rem;
-}
-.hstat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.7rem; font-weight: 700; line-height: 1;
-  color: #0f1a10;
-}
-.hstat-label {
-  font-size: 0.58rem; letter-spacing: 1.5px;
-  text-transform: uppercase; font-weight: 600;
-  color: #6b7280; line-height: 1.4;
-}
 .hero-ticker-wrap {
   background: #0f1a10; padding: 0.8rem 5%; overflow: hidden;
 }
@@ -881,10 +849,6 @@ footer { background: var(--dark); color: rgba(255,255,255,0.45); border-top: 3px
   .pkg-feats { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .fg.full, .form-submit { grid-column: span 1; }
-  .hero-stats-bar { display: grid; grid-template-columns: repeat(2,1fr); margin-top: 2.2rem; border-radius: 12px; }
-  .hstat { min-width: 0; padding: 1.1rem 0.8rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .hstat:nth-child(even) { border-right: none; }
-  .hstat:nth-child(3), .hstat:nth-child(4) { border-bottom: none; }
 }
 @media (max-width: 480px) {
   .gal-grid { grid-template-columns: 1fr; }
@@ -1056,24 +1020,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* STATS BAR */}
-        <div className="hero-stats-bar">
-          <div className="hero-stats-inner">
-            {[
-              { icon: Compass, num: "500+", label: "Safaris Completed", color: "#c9973a", bg: "rgba(201,151,58,0.1)" },
-              { icon: Heart,   num: "1,800+", label: "Happy Travellers", color: "#2d5a35", bg: "rgba(45,90,53,0.1)" },
-              { icon: Award,   num: "10+", label: "Years Experience", color: "#c9973a", bg: "rgba(201,151,58,0.1)" },
-            ].map((s, i) => (
-              <div key={i} className="hstat">
-                <div className="hstat-icon-box" style={{ background: s.bg }}>
-                  <s.icon size={16} style={{ color: s.color }} />
-                </div>
-                <div className="hstat-num">{s.num}</div>
-                <div className="hstat-label">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* TICKER */}
         <div className="hero-ticker-wrap">
