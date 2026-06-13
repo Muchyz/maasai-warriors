@@ -1216,11 +1216,7 @@ export default function App() {
               <div className="pkg-body">
                 <div className="pkg-dur">{p.duration}</div>
                 <div className="pkg-name">{p.name}</div>
-                <div className="pkg-price-row">
-                  <span className="pkg-price">{p.price}</span>
-                  <span className="pkg-usd">{p.usd}</span>
-                </div>
-                <div className="pkg-per">{p.per}</div>
+
                 <ul className="pkg-feats">
                   {p.features.map(f => (
                     <li key={f}><CheckCircle size={13} />{f}</li>
