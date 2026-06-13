@@ -149,9 +149,6 @@ const SEASONS = [
 const TEAM = [
   { name: "Joshua Lekoolal", role: "Lead Safari Guide & Founder", img: "/joshua.png", bio: "Born and raised in the Maasai Mara, Joshua has 15+ years guiding Big Five safaris and speaks English, Swahili, and Maa.", tags: ["KPSGA Licensed", "15+ Years", "EN · SW · Maa"] },
   { name: "Joseph Lekoolal", role: "Birding & Safari Guide", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80", bio: "A patient, unhurried guide who has helped travelers spot 500+ bird species and the Big Five across the Rift Valley. First safari or tenth, you're treated like family.", tags: ["KPSGA Licensed", "18+ Years", "EN · SW · Maa"] },
-  { name: "Naomi Sankale", role: "Cultural Tour Specialist", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&q=80", bio: "Naomi leads our village cultural immersions, sharing authentic Maasai traditions, beadwork, and storytelling with every guest.", tags: ["Community Liaison", "EN · SW · Maa"] },
-  { name: "Daniel Kiptoo", role: "Driver & Wildlife Tracker", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&q=80", bio: "An expert 4x4 driver and tracker, Daniel has an uncanny ability to find leopards and cheetahs others miss.", tags: ["Certified 4x4 Driver", "Wildlife Tracker"] },
-  { name: "Grace Wanjiru", role: "Guest Experience Coordinator", img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=500&q=80", bio: "Grace handles bookings, logistics, and ensures every guest's safari runs smoothly from arrival to departure.", tags: ["Customer Care"] },
 ];
 
 const WHY = [
