@@ -491,13 +491,13 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .tag { background: rgba(201,151,58,0.1); border: 1px solid rgba(201,151,58,0.25); color: var(--gl); font-size: 0.78rem; padding: 0.35rem 0.9rem; border-radius: 20px; display: flex; align-items: center; gap: 0.4rem; font-weight: 500; }
 
 /* ── WHY ── */
-.why-sec { background: var(--g); }
-.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; overflow: hidden; }
-.why-card { padding: 2.5rem 2rem; background: rgba(22,43,24,0.8); transition: background 0.25s; }
-.why-card:hover { background: rgba(45,90,53,0.5); }
+.why-sec { background: var(--cream); }
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.why-card { padding: 2.5rem 2rem; background: var(--white); border: 1px solid rgba(0,0,0,0.06); transition: background 0.25s, box-shadow 0.25s; }
+.why-card:hover { background: var(--white); box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-4px); }
 .why-icon-box { width: 48px; height: 48px; background: rgba(201,151,58,0.12); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; color: var(--gold); }
-.why-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); font-weight: 700; margin-bottom: 0.6rem; }
-.why-desc { color: rgba(255,255,255,0.55); font-size: 0.875rem; line-height: 1.75; }
+.why-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--dark); font-weight: 700; margin-bottom: 0.6rem; }
+.why-desc { color: var(--gray); font-size: 0.875rem; line-height: 1.75; }
 
 /* ── SERVICES ── */
 .svcs-sec { background: var(--cream); }
@@ -785,7 +785,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.45); border-top: 3px
 }
 
 /* ── DIRECTOR ── */
-.director-sec { background: var(--g); }
+.director-sec { background: var(--dark); border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); }
 .director-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: center; }
 .director-img-wrap { position: relative; }
 .director-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 8px; border: 4px solid rgba(201,151,58,0.15); }
@@ -1060,8 +1060,8 @@ export default function App() {
       {/* ── WHY ── */}
       <section className="section why-sec">
         <div className="sec-hdr centered">
-          <p className="sl" style={{ justifyContent: "center" }}><span>Why Choose Us</span></p>
-          <h2 className="sh" style={{ color: "var(--white)" }}>The Maasai Warriors <em>Difference</em></h2>
+          <p className="sl" style={{ justifyContent: "center", color: "var(--gold)" }}><span>Why Choose Us</span></p>
+          <h2 className="sh">The Maasai Warriors <em>Difference</em></h2>
         </div>
         <div className="why-grid">
           {WHY.map(w => (
