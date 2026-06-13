@@ -93,7 +93,7 @@ const DESTINATIONS = [
   { name: "Maasai Mara", tag: "Iconic Reserve", desc: "The world's greatest wildlife spectacle. Get up close to lion prides, witness the Great Migration, and experience the endless golden savanna of the Mara.", img: "/mara.jpg", hours: "4 hr drive" },
   { name: "Lake Nakuru", tag: "Pink Flamingos", desc: "A dazzling soda lake where thousands of flamingos paint the shoreline pink, zebras roam freely, and endangered rhinos and leopards roam the surrounding national park.", img: "/nakuru.jpg", hours: "1 hr drive" },
   { name: "Amboseli NP", tag: "Kilimanjaro Views", desc: "Witness Africa's most iconic scene — zebras and wildlife grazing beneath the snow-capped peak of Mount Kilimanjaro, the continent's highest mountain.", img: "/amboseli.jpg", hours: "5 hr drive" },
-  { name: "Maasai Village", tag: "Cultural Heart", desc: "Live with and learn from our own Maasai community. Beadwork, warrior training, and traditional food.", img: "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=700&q=80", hours: "On-site" },
+  { name: "Maasai Village", tag: "Cultural Heart", desc: "Step into authentic Maasai village life. Meet the community, learn traditional beadwork, hear warrior stories, and share a meal — a human experience you will never forget.", img: "/maasaivillage.jpg", hours: "On-site" },
 ];
 
 const GALLERY_IMGS = [
