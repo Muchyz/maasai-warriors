@@ -1564,15 +1564,7 @@ export default function App() {
         </div>
       </footer>
 
-{/* ── STICKY MOBILE QUOTE BAR ── */}
-      <div className="sticky-quote-bar">
-        <button className="btn-ghost" onClick={() => go("packages")}>
-          <Compass size={15} /> Packages
-        </button>
-        <button className="btn-gold" onClick={() => window.open(wa("Hello! I'd like a quick quote for a safari with Maasai Warriors Tours & Safaris 🦁"), "_blank")}>
-          <FaWhatsapp size={15} /> Get Quote
-        </button>
-      </div>
+
 
       {/* ── SCROLL TO TOP ── */}
       <button
