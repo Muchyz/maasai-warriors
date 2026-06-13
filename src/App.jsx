@@ -886,16 +886,46 @@ footer { background: var(--dark); color: rgba(255,255,255,0.45); border-top: 3px
   .gal-item { grid-column: span 1 !important; }
   .team-grid, .season-grid { grid-template-columns: 1fr !important; }
 }
+/* ── LOADER ── */
+.loader-wrap {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #0f1a10;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1.5rem;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.loader-wrap.hide { opacity: 0; visibility: hidden; }
+.loader-logo-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; animation: loaderFadeIn 0.6s ease both; }
+.loader-logo-img { width: 90px; height: auto; filter: drop-shadow(0 0 20px rgba(201,151,58,0.5)); }
+.loader-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--gold); font-weight: 700; letter-spacing: 2px; }
+.loader-sub { font-size: 0.55rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+.loader-bar-wrap { width: 180px; height: 2px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+.loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), var(--golds)); border-radius: 2px; animation: loaderBar 2s ease forwards; }
+.loader-dots { display: flex; gap: 0.4rem; }
+.loader-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: 0.3; animation: loaderDot 1.2s ease infinite; }
+.loader-dot:nth-child(2) { animation-delay: 0.2s; }
+.loader-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes loaderBar { 0% { width: 0%; } 70% { width: 80%; } 100% { width: 100%; } }
+@keyframes loaderDot { 0%,100% { opacity: 0.3; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-4px); } }
+@keyframes loaderFadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
 `;
 
 /* ── COMPONENT ─────────────────────────────────────────── */
 export default function App() {
+  const [loading, setLoading] = useState(true);
   const [navScrolled, setNavScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
   const [nlEmail, setNlEmail] = useState("");
   const [form, setForm] = useState({ name: "", phone: "", email: "", date: "", people: "", pkg: "", msg: "" });
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoading(false), 2200);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -923,6 +953,17 @@ export default function App() {
   return (
     <>
       <style>{css}</style>
+      <div className={`loader-wrap ${loading ? "" : "hide"}`}>
+        <div className="loader-logo-wrap">
+          <img src="/Masailogo.png" alt="Maasai Warriors" className="loader-logo-img" />
+          <div className="loader-brand">Maasai Warriors</div>
+          <div className="loader-sub">Tours & Safaris · Kenya</div>
+        </div>
+        <div className="loader-bar-wrap"><div className="loader-bar" /></div>
+        <div className="loader-dots">
+          <div className="loader-dot" /><div className="loader-dot" /><div className="loader-dot" />
+        </div>
+      </div>
 
       {/* ── NAV ── */}
       <nav className={`nav ${navScrolled ? "scrolled" : ""}`}>
