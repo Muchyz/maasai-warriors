@@ -148,7 +148,6 @@ const SEASONS = [
 
 const TEAM = [
   { name: "Joshua Lekoolal", role: "Lead Safari Guide & Founder", img: "/joshua.png", bio: "Born and raised in the Maasai Mara, Joshua has 15+ years guiding Big Five safaris and speaks English, Swahili, and Maa.", tags: ["KPSGA Licensed", "15+ Years", "EN · SW · Maa"] },
-  { name: "Joseph Lekoolal", role: "Birding & Safari Guide", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80", bio: "A patient, unhurried guide who has helped travelers spot 500+ bird species and the Big Five across the Rift Valley. First safari or tenth, you're treated like family.", tags: ["KPSGA Licensed", "18+ Years", "EN · SW · Maa"] },
 ];
 
 const WHY = [
