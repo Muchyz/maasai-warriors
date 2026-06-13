@@ -521,7 +521,7 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .svcs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 .svc-card { border-radius: 6px; overflow: hidden; background: var(--white); box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: transform 0.25s, box-shadow 0.25s; cursor: pointer; }
 .svc-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
-.svc-img { width: 100%; height: 200px; object-fit: cover; }
+.svc-img { width: 100%; height: 200px; object-fit: cover; object-position: center bottom; }
 .svc-body { padding: 1.5rem; }
 .svc-icon { width: 40px; height: 40px; background: rgba(201,151,58,0.1); border-radius: 5px; display: flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 0.8rem; }
 .svc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
