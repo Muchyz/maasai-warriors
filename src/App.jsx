@@ -97,8 +97,8 @@ const DESTINATIONS = [
 ];
 
 const GALLERY_IMGS = [
-  { src: "https://images.unsplash.com/photo-1551009175-8a68da93d5f9?w=700&q=80", label: "Savanna Sunrise" },
-  { src: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=700&q=80", label: "Maasai Warriors" },
+  { src: "/gallery1.jpg", label: "Safari Guests in the Wild" },
+  { src: "/about.png", label: "Maasai Warriors Team" },
   { src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=80", label: "Big Five Drive" },
   { src: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=700&q=80", label: "Lake Naivasha" },
   { src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=700&q=80", label: "Bush Camp Night" },
