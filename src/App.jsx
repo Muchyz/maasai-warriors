@@ -701,7 +701,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.45); border-top: 3px
 .scroll-top-fab.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
 .scroll-top-fab:hover { background: var(--gold); color: var(--g); }
 @media (max-width: 768px) {
-  .scroll-top-fab { bottom: 146px; right: 16px; width: 42px; height: 42px; }
+  .scroll-top-fab { bottom: 84px; right: 20px; width: 42px; height: 42px; }
 }
 
 /* ── TEAM ── */
@@ -772,7 +772,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.45); border-top: 3px
 @media (max-width: 768px) {
   .sticky-quote-bar { display: flex; }
   body { padding-bottom: 64px; }
-  .wa-fab { bottom: 84px; right: 16px; width: 50px; height: 50px; }
+  .wa-fab { bottom: 24px; right: 16px; width: 50px; height: 50px; }
   .c-info-item { padding: 0.8rem 0.6rem; margin-bottom: 0.5rem; gap: 0.8rem; }
   .c-icon { width: 40px; height: 40px; }
 }
