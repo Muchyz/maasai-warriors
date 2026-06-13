@@ -63,7 +63,7 @@ const PACKAGES = [
     per: "per person",
     tag: "Most Popular",
     features: ["Morning & evening game drive", "Maasai village cultural tour", "Overnight bush camp", "All meals included", "Bonfire & storytelling night", "Transport & guide", "Wildlife photo prints"],
-    img: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=600&q=80",
+    img: "/culturewildlife.jpg",
   },
   {
     name: "Full Rift Valley",
@@ -83,7 +83,7 @@ const PACKAGES = [
     per: "per person (min 2)",
     tag: "Premium",
     features: ["Maasai Mara migration season", "Amboseli (Kilimanjaro views)", "Lake Nakuru flamingos", "Naivasha & Hell's Gate", "Luxury tented camps", "All inclusive", "Private vehicle & guide", "Pre-departure briefing kit"],
-    img: "https://images.unsplash.com/photo-1551009175-8a68da93d5f9?w=600&q=80",
+    img: "/grandsafari.jpg",
   },
 ];
 
