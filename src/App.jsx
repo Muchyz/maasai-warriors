@@ -474,13 +474,13 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
 }
 .hstat {
   display: flex; flex-direction: column; align-items: center;
-  gap: 0.25rem; padding: 1.3rem 1rem; text-align: center;
+  gap: 0.2rem; padding: 1.1rem 0.5rem; text-align: center;
   border-right: 1px solid rgba(255,255,255,0.2);
 }
 .hstat:last-child { border-right: none; }
 .hstat-icon { color: rgba(255,255,255,0.5); margin-bottom: 0.1rem; }
-.hstat-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #fff; font-weight: 700; line-height: 1; }
-.hstat-label { font-size: 0.6rem; color: rgba(255,255,255,0.7); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+.hstat-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 4vw, 2rem); color: #fff; font-weight: 700; line-height: 1; }
+.hstat-label { font-size: clamp(0.48rem, 1.5vw, 0.6rem); color: rgba(255,255,255,0.7); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; line-height: 1.4; }
 .hero-ticker-wrap {
   background: #0f1a10; padding: 0.8rem 5%; overflow: hidden;
 }
